@@ -31,9 +31,9 @@ Modules:
   - check Arduino box
 
 - Connector
-  - X pins
+  - 24 pins
     - 2 power
-    - 8 + 8 + 1 = 17 for leds
+    - 8 + 1 = 9 for leds
     - 4 + 2 = 6 for buttons
     - 2 pots
     - 1 square wave

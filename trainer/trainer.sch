@@ -1,0 +1,267 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 1750 2500 0    50   Input ~ 0
+D0
+$Comp
+L Device:R R?
+U 1 1 5E873A41
+P 2100 2500
+F 0 "R?" V 1893 2500 50  0000 C CNN
+F 1 "10k" V 1984 2500 50  0000 C CNN
+F 2 "" V 2030 2500 50  0001 C CNN
+F 3 "~" H 2100 2500 50  0001 C CNN
+	1    2100 2500
+	0    1    1    0   
+$EndComp
+$Comp
+L Transistor_BJT:2N3904 Q?
+U 1 1 5E874206
+P 2600 2500
+F 0 "Q?" H 2790 2546 50  0000 L CNN
+F 1 "2N3904" H 2790 2455 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2800 2425 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" H 2600 2500 50  0001 L CNN
+	1    2600 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5E8747FE
+P 3350 2700
+F 0 "D?" H 3343 2445 50  0000 C CNN
+F 1 "LED RED" H 3343 2536 50  0000 C CNN
+F 2 "" H 3350 2700 50  0001 C CNN
+F 3 "~" H 3350 2700 50  0001 C CNN
+	1    3350 2700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E875238
+P 3750 2700
+F 0 "R?" V 3543 2700 50  0000 C CNN
+F 1 "220" V 3634 2700 50  0000 C CNN
+F 2 "" V 3680 2700 50  0001 C CNN
+F 3 "~" H 3750 2700 50  0001 C CNN
+	1    3750 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E875705
+P 4000 2800
+F 0 "#PWR?" H 4000 2550 50  0001 C CNN
+F 1 "GND" H 4005 2627 50  0000 C CNN
+F 2 "" H 4000 2800 50  0001 C CNN
+F 3 "" H 4000 2800 50  0001 C CNN
+	1    4000 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 2500 2400 2500
+Wire Wire Line
+	3900 2700 4000 2700
+Wire Wire Line
+	4000 2700 4000 2800
+Wire Wire Line
+	2700 2700 3200 2700
+Wire Wire Line
+	3500 2700 3600 2700
+$Comp
+L Device:R R?
+U 1 1 5E87785D
+P 2100 3450
+F 0 "R?" V 1893 3450 50  0000 C CNN
+F 1 "220" V 1984 3450 50  0000 C CNN
+F 2 "" V 2030 3450 50  0001 C CNN
+F 3 "~" H 2100 3450 50  0001 C CNN
+	1    2100 3450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1850 3450 1950 3450
+$Comp
+L Transistor_BJT:2N3906 Q?
+U 1 1 5E8783B2
+P 2550 3450
+F 0 "Q?" H 2740 3496 50  0000 L CNN
+F 1 "2N3906" H 2740 3405 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2750 3375 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3906.pdf" H 2550 3450 50  0001 L CNN
+	1    2550 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 3450 2350 3450
+Wire Wire Line
+	2700 2250 2700 2300
+$Comp
+L power:+5V #PWR?
+U 1 1 5E875E0F
+P 2700 2250
+F 0 "#PWR?" H 2700 2100 50  0001 C CNN
+F 1 "+5V" H 2715 2423 50  0000 C CNN
+F 2 "" H 2700 2250 50  0001 C CNN
+F 3 "" H 2700 2250 50  0001 C CNN
+	1    2700 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E879749
+P 2650 3700
+F 0 "#PWR?" H 2650 3450 50  0001 C CNN
+F 1 "GND" H 2655 3527 50  0000 C CNN
+F 2 "" H 2650 3700 50  0001 C CNN
+F 3 "" H 2650 3700 50  0001 C CNN
+	1    2650 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 3650 2650 3700
+$Comp
+L Device:LED D?
+U 1 1 5E879CDE
+P 3000 3250
+F 0 "D?" H 2993 3466 50  0000 C CNN
+F 1 "LED GREEN" H 2993 3375 50  0000 C CNN
+F 2 "" H 3000 3250 50  0001 C CNN
+F 3 "~" H 3000 3250 50  0001 C CNN
+	1    3000 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 3250 2850 3250
+Wire Wire Line
+	1750 2500 1850 2500
+Wire Wire Line
+	1850 2500 1850 3450
+Connection ~ 1850 2500
+Wire Wire Line
+	1850 2500 1950 2500
+$Comp
+L Regulator_Linear:LM341T-05_TO220 U?
+U 1 1 5E87E6F3
+P 2300 1150
+F 0 "U?" H 2300 1392 50  0000 C CNN
+F 1 "LM3940" H 2300 1301 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 2300 1375 50  0001 C CIN
+F 3 "http://www.fairchildsemi.com/ds/LM/LM78M05.pdf" H 2300 1100 50  0001 C CNN
+	1    2300 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5E87F4BB
+P 1800 1000
+F 0 "#PWR?" H 1800 850 50  0001 C CNN
+F 1 "+5V" H 1815 1173 50  0000 C CNN
+F 2 "" H 1800 1000 50  0001 C CNN
+F 3 "" H 1800 1000 50  0001 C CNN
+	1    1800 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E880347
+P 3350 3100
+F 0 "#PWR?" H 3350 2950 50  0001 C CNN
+F 1 "+3V3" H 3365 3273 50  0000 C CNN
+F 2 "" H 3350 3100 50  0001 C CNN
+F 3 "" H 3350 3100 50  0001 C CNN
+	1    3350 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E8805CE
+P 2800 1000
+F 0 "#PWR?" H 2800 850 50  0001 C CNN
+F 1 "+3V3" H 2815 1173 50  0000 C CNN
+F 2 "" H 2800 1000 50  0001 C CNN
+F 3 "" H 2800 1000 50  0001 C CNN
+	1    2800 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 3250 3350 3250
+Wire Wire Line
+	3350 3250 3350 3100
+Wire Wire Line
+	1800 1000 1800 1150
+Wire Wire Line
+	1800 1150 2000 1150
+Wire Wire Line
+	2600 1150 2800 1150
+Wire Wire Line
+	2800 1150 2800 1000
+$Comp
+L power:GND #PWR?
+U 1 1 5E8833C9
+P 2300 1650
+F 0 "#PWR?" H 2300 1400 50  0001 C CNN
+F 1 "GND" H 2305 1477 50  0000 C CNN
+F 2 "" H 2300 1650 50  0001 C CNN
+F 3 "" H 2300 1650 50  0001 C CNN
+	1    2300 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 1650 2300 1550
+$Comp
+L Device:C_Small C?
+U 1 1 5E8852FD
+P 1800 1350
+F 0 "C?" H 1892 1396 50  0000 L CNN
+F 1 "0.47uF" H 1892 1305 50  0000 L CNN
+F 2 "" H 1800 1350 50  0001 C CNN
+F 3 "~" H 1800 1350 50  0001 C CNN
+	1    1800 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E885879
+P 2800 1350
+F 0 "C?" H 2892 1396 50  0000 L CNN
+F 1 "33pF" H 2892 1305 50  0000 L CNN
+F 2 "" H 2800 1350 50  0001 C CNN
+F 3 "~" H 2800 1350 50  0001 C CNN
+	1    2800 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 1150 1800 1250
+Connection ~ 1800 1150
+Wire Wire Line
+	1800 1450 1800 1550
+Wire Wire Line
+	1800 1550 2300 1550
+Connection ~ 2300 1550
+Wire Wire Line
+	2300 1550 2300 1450
+Wire Wire Line
+	2800 1150 2800 1250
+Connection ~ 2800 1150
+Wire Wire Line
+	2800 1450 2800 1550
+Wire Wire Line
+	2800 1550 2300 1550
+Text Notes 800  1250 0    50   ~ 0
+3.3V supply
+Text Notes 850  2950 0    50   ~ 0
+Input viewer (x8)
+$EndSCHEMATC
