@@ -1,5 +1,18 @@
 # trainer
 
+Done: 
+- Logic indicator
+- Switches
+
+To do:
+- Debounced pushbuttons
+- Pots
+- Buzzer
+- Square wave generator
+- Piezo (?)
+- Relay (?)
+- USB male/female
+
 Modules:
 
 - Logic indicator
