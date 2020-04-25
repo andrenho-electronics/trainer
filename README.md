@@ -4,11 +4,14 @@ Done:
 - Logic indicator
 - Switches
 
+Microcontroller:
+- Debounced pushbuttons
+- Square wave generator
+
 To do:
 - Debounced pushbuttons
 - Pots
 - Buzzer
-- Square wave generator
 - Piezo (?)
 - Relay (?)
 - USB male/female
