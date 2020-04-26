@@ -105,10 +105,10 @@ main()
     // check prev/next buttons
     if (((PINB >> 7) & 1) == 0) {
       update_freq(1);
-      _delay_ms(300);
+      _delay_ms(150);
     } else if (((PIND >> 6) & 1) == 0) {
       update_freq(-1);
-      _delay_ms(300);
+      _delay_ms(150);
     }
   }
 }
