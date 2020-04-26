@@ -18,7 +18,8 @@ update_freq(int i)
     if (freq < 0)
       freq = 6;
   }
-  PORTB = (PORTB & (1 << 7)) | ~(1 << freq);
+	if (freq >= 0)
+    PORTB = (PORTB & (1 << 7)) | ~(1 << freq);
 
   // TIMER 1 for interrupt frequency 2 Hz:
   cli(); // stop interrupts
