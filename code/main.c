@@ -2,7 +2,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-volatile int freq = 0;
+volatile int freq = -1;
 
 static void
 update_freq(int i)
