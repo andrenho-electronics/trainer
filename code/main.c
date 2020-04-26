@@ -3,23 +3,31 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-volatile int freq = -1;
-volatile bool clk = 0;
+volatile int freq = 7;
+volatile bool clk = false;
 
 static void
 update_freq(int i)
 {
   if (i == 1) {
     ++freq;
-    if (freq > 6)
+    if (freq > 7)
       freq = 0;
   } else if (i == -1) {
     --freq;
     if (freq < 0)
-      freq = 6;
+      freq = 7;
   }
-	if (freq >= 0)
+
+
+  if (freq == 7) {
+    PORTB = (PORTB & (1 << 7)) | 0b1111111;
+    PORTD &= ~(1 << 5);   // clear output
+  } else {
     PORTB = (PORTB & (1 << 7)) | ~(1 << freq);
+    PORTD |= (1 << 5);    // set output
+    clk = true;
+  }
 
   // TIMER 1 for interrupt frequency 2 Hz:
   cli(); // stop interrupts
@@ -57,6 +65,10 @@ update_freq(int i)
       OCR1A = 499;
       TCCR1B |= (0 << CS12) | (0 << CS11) | (1 << CS10);
       break;
+    case 7:
+      OCR1A = 0;
+      TCCR1B = 0;
+      break;
   }
   // enable timer compare interrupt
   TIMSK |= (1 << OCIE1A);
@@ -74,12 +86,12 @@ ISR(TIMER1_COMPA_vect) {
 int
 main()
 {
-  DDRB  = 0b11111111;    // all inputs
-  PORTB = 0b01111111;    // all indicator leds off
+  DDRB  = 0b01111111;    // all inputs
+  PORTB = 0b11111111;    // all indicator leds off
   //        |'''''''  leds
   //        '- input (next)
 
-  DDRD  = 0b01000011;
+  DDRD  = 0b00000011;
   PORTD = 0b01110000;
   //         ||||||'- input push A
   //         |||||'-- input push B
