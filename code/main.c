@@ -1,13 +1,14 @@
+#include <stdbool.h>
 #include <avr/interrupt.h>
 #include <avr/io.h>
 #include <util/delay.h>
 
 volatile int freq = 0;
+volatile bool clk = 0;
 
 static void
 update_freq(int i)
 {
-  /*
   if (i == 1) {
     ++freq;
     if (freq > 6)
@@ -43,43 +44,37 @@ update_freq(int i)
       OCR1A = 12499;
       TCCR1B |= (0 << CS12) | (1 << CS11) | (0 << CS10);
       break;
-    case 4:  // 100 Hz
+    case 4:  // 10 Hz
+      OCR1A = 49999;
+      TCCR1B |= (0 << CS12) | (0 << CS11) | (1 << CS10);
+      break;
+    case 5:  // 100 Hz
       OCR1A = 4999;
       TCCR1B |= (0 << CS12) | (0 << CS11) | (1 << CS10);
       break;
-    case 5:  // 1 kHz
+    case 6:  // 1 kHz
       OCR1A = 499;
-      TCCR1B |= (0 << CS12) | (0 << CS11) | (1 << CS10);
-      break;
-    case 6:  // 100 kHz
-      OCR1A = 4;
       TCCR1B |= (0 << CS12) | (0 << CS11) | (1 << CS10);
       break;
   }
   // enable timer compare interrupt
   TIMSK |= (1 << OCIE1A);
   sei(); // allow interrupts
-  */
-  
-  cli();
-  TCCR1A = (1 << COM1A1) | (1 << WGM10);
-  TCCR1B = (1 << CS01);
-  OCR1A = 0x10;
-  sei();
 }
 
 ISR(TIMER1_COMPA_vect) {
-  if (PORTD & (1 << 5))
+  if (clk)
     PORTD &= ~(1 << 5);
   else
     PORTD |= (1 << 5);
+	clk = !clk;
 }
 
 int
 main()
 {
   DDRB  = 0b11111111;    // all inputs
-  PORTB = 0b01110111;    // all indicator leds off
+  PORTB = 0b01111111;    // all indicator leds off
   //        |'''''''  leds
   //        '- input (next)
 
@@ -94,7 +89,6 @@ main()
   update_freq(0);
 
   for (;;) {
-    /*
     // check prev/next buttons
     if (((PINB >> 7) & 1) == 0) {
       update_freq(1);
@@ -103,6 +97,5 @@ main()
       update_freq(-1);
       _delay_ms(300);
     }
-    */
   }
 }
