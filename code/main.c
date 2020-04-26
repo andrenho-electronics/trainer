@@ -3,7 +3,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-volatile int freq = 0;
+volatile int freq = -1;
 volatile bool clk = 0;
 
 static void
